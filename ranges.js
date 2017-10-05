@@ -1,5 +1,5 @@
 module.exports = [
-  // From https://www.cloudflare.com/ips-v4
+// From https://www.cloudflare.com/ips-v4
   "103.21.244.0/22",
   "103.22.200.0/22",
   "103.31.4.0/22",
@@ -14,7 +14,7 @@ module.exports = [
   "190.93.240.0/20",
   "197.234.240.0/22",
   "198.41.128.0/17",
-  // From https://www.cloudflare.com/ips-v6
+// From https://www.cloudflare.com/ips-v6
   "2400:cb00::/32",
   "2405:8100::/32",
   "2405:b500::/32",
