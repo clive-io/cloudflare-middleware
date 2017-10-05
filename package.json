@@ -1,0 +1,26 @@
+{
+  "dependencies": {
+    "cloudflare-ip": "^0.0.6"
+  },
+  "name": "cloudflare-middleware",
+  "version": "1.0.0",
+  "description": "Restores request origin ip to `req.ip`.",
+  "main": "index.js",
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/clive-io/cloudflare-middleware.git"
+  },
+  "keywords": [
+    "cloudflare"
+  ],
+  "author": "Clive Chan (clive.io)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/clive-io/cloudflare-middleware/issues"
+  },
+  "homepage": "https://github.com/clive-io/cloudflare-middleware#readme"
+}
