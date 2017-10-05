@@ -3,7 +3,7 @@
     "range_check": "^1.4.0"
   },
   "name": "cloudflare-middleware",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Restores request origin ip to `req.ip`. Denies other requests.",
   "main": "index.js",
   "devDependencies": {},
