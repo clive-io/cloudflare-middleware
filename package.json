@@ -6,9 +6,13 @@
   "version": "1.0.4",
   "description": "Restores request origin ip to `req.origin_ip`. Denies other requests.",
   "main": "index.js",
-  "devDependencies": {},
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "got": "^11.7.0",
+    "mocha": "^8.1.3"
+  },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha ranges.integration.js"
   },
   "repository": {
     "type": "git",
