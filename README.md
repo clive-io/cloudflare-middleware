@@ -1,23 +1,47 @@
 # cloudflare-middleware
 
-Restores request origin ip to `req.origin_ip`. Denies other requests.
+Allows requests which originate from Cloudflare. Restores request origin IP
+to `req.origin_ip`. Denies other requests.
 
 ## Usage
 
-```nodejs
-let app = express();
-app.use(require("cloudflare-middleware")());
+Using [Express trust proxy][trust proxy] (preferred):
+
+```js
+const { trustProxy } = require('cloudflare-middleware')
+
+const app = express()
+app.set('trust proxy', trustProxy)
 ```
 
-This is a safer alternative to naively using `app.set("trust proxy");`, as this checks CloudFlare IP address ranges.
+Using Express middleware:
 
-This, however, has been deprecated in favor of the following:
+```js
+const { middleware } = require('cloudflare-middleware')
 
-```nodejs
-const cloudflareIp = require('cloudflare-ip');
+const app = express()
+app.use(middleware())
+```
 
-app.set('trust proxy', ip => {
-  if(ip.startsWith('::ffff:'))
-    ip = ip.substr(7);
-  return ip == '127.0.0.1' || cloudflareIp(ip);
-});
+Using with another framework:
+
+```js
+const http = require('http')
+const { isCloudflare } = require('cloudflare-middleware')
+
+http.createServer((req, res) => {
+  if (!isCloudflare(req.socket.remoteAddress)) {
+    response.end()
+  }
+
+  // Proceed with the response.
+  response.write('oh, you good')
+  response.end()
+})
+```
+
+[trust proxy]: https://expressjs.com/en/guide/behind-proxies.html
+
+## License
+
+This project is licensed under the ISC license.
